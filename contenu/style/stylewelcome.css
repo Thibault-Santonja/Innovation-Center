@@ -1,0 +1,719 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* ci dessus le reset CSS*/
+
+
+
+
+
+@font-face
+{
+    font-family: 'font';
+    src: url('font/GeosansLight.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: 'titre';
+    src: url('font/source-code-pro-light.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+
+/*base de la page*/
+
+body {
+	/*background-color: rgba(0,0,0,0.95);*/
+	background: url("../img/fond.jpg") fixed no-repeat top center;
+	min-height: 100%;	/*pas d?rmer l'image en hauteur*/
+	min-width:100%;	/*pas d?rmer l'image en lageur*/
+	background-size: cover;
+}
+
+
+html,body { 
+  height: 1000px;
+  width: 100%;
+}
+
+.page {
+	width: 900px;
+	background-color: rgba(10,10,10,0.9);
+    margin: auto;
+	border-width: 1px;
+	border-color: #29a329;
+	border-style:solid;
+}
+
+a {
+	text-decoration: none;
+	color: rgb(133, 224, 133);
+	font-family: 'titre';
+}
+
+
+/*Tête de page------------------------------------------------------------------*/
+
+
+
+header {
+	border-width: 1px;
+	border-color: #29a329;
+	border-style:solid;
+	border-radius: 20px;
+	
+	Width: 90%;
+	/*margin: auto;	*/
+	margin: 2% 2% 2% 2%;
+	width : 95%;
+	height: 100px;
+	color: white;
+	/*background-color: rgba(10,10,10,0.80);*/
+
+	max-height: 100%;	
+	max-width:100%;
+	background: url("../img/banniere.jpg") no-repeat top center;
+}
+
+nav {
+    text-align: left;
+    display: relative;
+	height:100%;
+	width:100%;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 78px;
+    margin-top: 7.5%; /*par rapport au haut de la page pourquoi ?*/
+	Width: 15%;
+	text-transform: uppercase;
+	font-size:20px;
+	
+	background-color: rgba(10,10,10,0.80);
+	border-radius : 10px;
+	
+}
+
+/*menu déroulant*/
+
+
+.menu a { 
+	display:block; 
+}
+
+.menu > li, .menu > li li {
+	position: relative;
+	display:inline-block;
+	width: 110px;
+	padding: 6px 15px;
+}
+
+.menu > li:hover, .menu > li li:hover { 
+  background: #29a329;
+  color: #FFF;
+  }
+
+
+.menu ul {
+	position: absolute;
+	padding: 0; /*tester le preference (avec/sans) (si "sans", enlever left et right : 0 (inutile)*/
+	left: 0;
+	right :0;
+	max-height:0em;	
+	margin: 0; 
+	overflow: hidden;
+	transition: 1s max-height 0.3s;
+	background-color: rgba(10,10,10,0.90);
+}
+
+.menu > li:hover ul {
+	max-height: 20em;
+}
+
+
+#accueil {margin-right:100px}
+
+/*carré qui tourne--------------------------------------------------------------------------------------------------------------------*/
+/*
+.anim {
+	width: 200px;
+	height: 200px;
+	margin: 3em;
+	background: #fff;
+	border: 30px solid #aaa;
+	border-radius: 100px;
+	transition: all 2s; 
+	position: fixe;
+}
+
+.anim img{
+	max-height: 100%;	/*pas déformer l'image*//*  plus utile*//*
+	max-width:100%;
+}
+
+
+.anim:after { 
+	content: "JC2";
+	position:relative; 
+	top: -300px; 
+	right: -300px;
+	color:#888;
+	opacity:0; 
+	transition: opacity 2s;
+}
+
+/*
+.anim:hover:after {
+	opacity: 1;
+	transition: opacity 1s 1s;
+}
+*//*
+.anim img:after {
+	visibility:hidden;
+	transition:  1s 1s;
+}*/
+/*
+.anim:hover img {opacity:0}*//*
+
+.anim:hover {
+	border-color: #333;
+	transform: rotate(1080deg);
+	border-radius: 50%;
+	content: "JC2";
+}
+
+.mv-item  {
+  -webkit-box-sizing: padding-box;
+  -moz-box-sizing: padding-box;
+  box-sizing: padding-box;
+}
+
+
+
+
+/* orbite --------------------------------------------------------------------------------------------------------------*/
+
+/*
+img{
+max-height : 100%;
+max-width : 100%;
+}
+
+p {
+color:white;
+text-align: center;
+}
+
+.centre {
+  height: 100px;
+  width: 100px;
+  margin-top: 30%;
+  margin-left: 45%;
+  box-shadow: 0 0 10px 2px rgba(255, 107, 0, 0.4), 0 0 22px 11px rgba(255, 203, 0, 0.13);
+}
+
+.animation {
+  margin: 0 auto;
+  width: 100%;
+  height: 350px;
+  position: relative;
+}
+.animation div {
+  border-radius: 1000px;
+  top: -15%;
+  left: 40%;
+  position: absolute;
+}
+
+/*.premier:hover, .quatre:hover, .trois:hover, .second:hover   div:hover {animation-play-state: paused}*/
+
+
+/*
+.premier, .second, .trois, .quatre {
+  height: 500px;
+  width: 500px;
+  margin-top: -150px;
+  margin-left: -150px;
+}
+
+
+.premier:before, .second:before, .trois:before, .quatre:before {
+  height: 100px;
+  width: 100px;
+}
+
+
+
+/* premier item --------------------------*/
+
+
+/*
+.premier {
+
+  -webkit-animation: orb 20s linear infinite;
+          animation: orb 20s linear infinite;
+}
+
+@-webkit-keyframes orb {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes orb {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+
+
+/* second item -------------------------------------*/
+/*
+.second {
+  -webkit-animation: orbite 20s linear infinite;
+          animation: orbite 20s linear infinite;
+	transform: rotate(360deg) 10s;
+}
+
+
+@-webkit-keyframes orbite {
+  from {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  to {
+    -webkit-transform: rotate(540deg);
+            transform: rotate(540deg);
+  }
+}
+
+@keyframes orbite {
+  from {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  to {
+    -webkit-transform: rotate(540deg);
+            transform: rotate(540deg);
+  }
+}
+
+
+
+
+/* troisieme item ------------------------------*/
+/*
+.trois {
+  -webkit-animation: orbitetrois 20s linear infinite;
+          animation: orbitetrois 20s linear infinite;
+	transform: rotate(360deg) 10s;
+}
+
+
+
+@-webkit-keyframes orbitetrois {
+  from {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  to {
+    -webkit-transform: rotate(450deg);
+            transform: rotate(450deg);
+  }
+}
+
+@keyframes orbitetrois {
+  from {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  to {
+    -webkit-transform: rotate(450deg);
+            transform: rotate(450deg);
+  }
+}
+
+/* quatrieme item ------------------------------------*/
+/*
+.quatre {
+  -webkit-animation: orbitequatre 20s linear infinite;
+          animation: orbitequatre 20s linear infinite;
+	transform: rotate(360deg) 10s;
+}
+
+
+@-webkit-keyframes orbitequatre {
+  from {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+  to {
+    -webkit-transform: rotate(630deg);
+            transform: rotate(630deg);
+  }
+}
+
+@keyframes orbitequatre {
+  from {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+  to {
+    -webkit-transform: rotate(630deg);
+            transform: rotate(630deg);
+  }
+}
+
+
+
+/* test 2 ---------------------------------------------------------------------------------------------------------------------*/
+ 
+   /*
+   
+.permier {
+position: absolute;
+top:300; left:300;
+width: 100px; height: 100px;
+background: #999;
+animation: 10s premier infinite;
+/*animation: 10s premier infinite;
+transition: all 2s; 
+}
+@keyframes premier {
+	0%  { left: 0; top:0; }
+   100% { left: 0; top:0; }
+   25% { left: 500px; top:0 }
+   50% { left: 500px; top:500px }
+   75% { left:0; top:500px; }
+}
+/*body:hover div { animation-play-state: paused}*/
+/*
+.second {
+position: absolute;
+top:300; left:300;
+width: 100px; height: 100px;
+background: #999;
+animation: 10s second infinite;
+transition: all 2s; 
+}
+@keyframes second {
+	0%  { left: 500px; top:500px; }
+   100% { left: 500px; top:500px; }
+   25% { left: 0; top:500px }
+   50% { left: 0; top:0 }
+   75% { left:500px; top:0; }
+}
+
+*/
+
+
+.circle {
+  background:transparent;
+  margin:auto;
+  margin-top:160px;
+  margin-bottom:200px;
+  width:450px;
+  height:450px;
+  /*border:8px solid #29a329;*/
+  border-radius:50%;
+  position:relative;
+  -webkit-animation:animation 32s infinite linear;
+  animation:animation 32s infinite linear;/*Safari and Chrome*/
+}
+
+.description {
+	
+  -webkit-transition:opacity .2s 0s ease;
+  transition:opacity .2s 0s ease;
+  -webkit-animation:animation2 32s infinite linear;
+  animation:animation2 32s infinite linear;/*Safari and Chrome*/
+  
+  width:120px;
+  /*background-color: rgba(10,10,10,0.80);
+  border-radius : 10px;*/
+  
+  text-align:center;
+  color:rgb(133, 224, 133);
+  font-family: 'titre';
+}
+
+
+
+
+.circle:hover {
+  animation-play-state:paused;
+  -webkit-animation-play-state:paused; /* Safari and Chrome */
+}
+
+.point_general {
+  width:12px;
+  height:12px;
+  position:absolute;
+  border-radius:50%;
+  background:rgb(133, 224, 133);
+  border:8px solid #29a329;
+}
+
+.point_general:after {
+  width:0px;
+  height:0px;
+  position:absolute;
+  top:0px;
+  left:0px;
+  content:'';
+  background:rgba(10,10,10,0.8);
+  border:8px solid #29a329;
+  opacity:0;
+  border-radius:50%;
+  -webkit-transition:all .4s ease;
+  transition:all .4s ease;
+}
+
+.point_general:hover:after {
+ opacity:0.8;
+  width:200px;
+  height:200px;
+  top:-94px;
+  left:-94px;
+}
+
+.texte {
+  opacity:0;
+  position:absolute;
+  text-align:center;
+  top:-50px;
+  left:-50px;
+  width:110px;
+  height:110px;
+  overflow:hidden;
+  color:rgb(133, 224, 133);
+  font-family: 'titre';
+  font-size: 15px;
+  z-index:10;
+  -webkit-transition:opacity .2s 0s ease;
+  transition:opacity .2s 0s ease;
+  -webkit-animation:animation2 32s infinite linear;
+  animation:animation2 32s infinite linear;/*Safari and Chrome*/
+}
+
+.point_general:hover .texte {
+  opacity:1;
+  -webkit-transition:opacity .4s .4s ease;
+  transition:opacity .4s .4s ease;
+}
+
+.point_general:hover .description {opacity:0}
+
+.circle:hover .texte, .circle:hover .description {
+  animation-play-state:paused;
+  -webkit-animation-play-state:paused; /* Safari and Chrome */
+}
+
+
+.point1 {
+  top:45px;
+  left:45px;
+}
+/*
+.d1 {
+	color: white;
+  bottom:45px;
+  right:45px;
+}*/
+
+.point2 {
+  top:-24px;
+  left:207px;
+}
+
+.point3 {
+  top:45px;
+  right:45px;
+}
+
+.point4 {
+  top:207px;
+  right:-24px;
+}
+
+.point5 {
+  bottom:45px;
+  right:45px;
+}
+
+.point6 {
+  bottom:-24px;
+  left:207px;
+}
+
+.point7 {
+  bottom:45px;
+  left:45px;
+}
+
+.point8 {
+  top:207px;
+  left:-24px;
+}
+
+
+
+/*
+
+.point11 {
+  top:30px;
+  left:30px;
+}
+
+.point22 {
+  top:-16px;
+  left:138px;
+}
+
+.point33 {
+  top:30px;
+  right:30px;
+}
+
+.point44 {
+  top:138px;
+  right:-16px;
+}
+
+.point55 {
+  bottom:30px;
+  right:30px;
+}
+
+.point66 {
+  bottom:-16px;
+  left:138px;
+}
+
+.point77 {
+  bottom:30px;
+  left:30px;
+}
+
+.point88 {
+  top:138px;
+  left:-16px;
+}
+*/
+
+
+
+@keyframes animation
+{
+0% {transform:rotate(0deg);}
+100% {transform:rotate(360deg);}
+}
+
+@-webkit-keyframes animation /*Safari and Chrome*/
+{
+0% {-webkit-transform:rotate(0deg);}
+100% {-webkit-transform:rotate(360deg);}  
+}
+
+@keyframes animation2
+{
+0% {transform:rotate(0deg);}
+100% {transform:rotate(-360deg);}
+}
+
+@-webkit-keyframes animation2 /*Safari and Chrome*/
+{
+0% {-webkit-transform:rotate(0deg);}
+100% {-webkit-transform:rotate(-360deg);}  
+}
+
+#innovation {
+  font-family:'titre';
+  margin-top: 350px;
+  margin-left: 280px;
+  color:#29a329;
+  position: absolute;
+  font-size: 32px;
+}
+
+
+footer{margin-bottom:20px}
+
+.legende img {
+	margin-top:-80px;
+    display: inline-block;
+	margin-left: 0.5%;
+	vertical-align: top;
+	max-height:136.3px;
+}
+/*.legende {margin: auto}*/

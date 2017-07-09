@@ -1,0 +1,465 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* ci dessus le reset CSS*/
+
+
+
+
+@font-face
+{
+    font-family: 'font';
+    src: url('font/GeosansLight.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: 'titre';
+    src: url('font/source-code-pro-light.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/*base de la page*/
+
+
+
+body {
+	background: url("../img/fond.jpg") fixed no-repeat top center;
+	min-height: 100%;	/*pas déformer l'image en hauteur*/
+	min-width:100%;	/*pas déformer l'image en lageur*/
+	background-size: cover; /*toute la page*/
+	/*-moz-background-size: 100% 100%;     /* Gecko 1.9.2 (Firefox 3.6) */
+	/*-o-background-size: 100% 100%;        /* Opera 9.5 */
+	/*-webkit-background-size: 100% 100%;   /* Safari 3.0 */
+	/*background-size: 100% 100%;           /* Gecko 2.0 (Firefox 4.0) > CSS3 */
+}
+.page {
+	width: 900px;
+	background-color: rgba(10,10,10,0.8);
+    margin: auto;
+	border-width: 1px;
+	border-color: #29a329;
+	border-style:solid;
+}
+
+a {
+	text-decoration: none;
+	color: rgb(133, 224, 133);
+	font-family: 'titre';
+}
+/*
+a:hover {
+	color: orange;
+	font-size: 20px;
+	font-family: 'titre';
+}*/
+
+h1 {
+	color: orange;
+	font-size: 30px;
+	text-transform: uppercase;
+	text-align: center;
+	margin-top:65px;
+	height:80px;
+	font-family: 'titre';
+}
+
+h2 {
+	color:  rgb(133, 224, 133);
+	font-size: 20px;
+	font-family: 'titre';
+	text-transform: uppercase;
+}
+
+h3 {
+	color:  rgb(133, 224, 133);
+	font-family: 'titre';
+	text-align: center;
+}
+
+p{
+	color: white;
+	font-size: 17px;
+	text-align: justify;
+	text-indent: 50px;
+	font-family: 'font';
+}
+
+.liste li {
+	list-style-type: square;
+	color: white;
+	font-size: 17px;
+	text-align: justify;
+	font-family: 'font';
+}
+
+
+
+/*Tête de page------------------------------------------------------------------*/
+
+
+header {
+	border-width: 1px;
+	border-color: #29a329;
+	border-style:solid;
+	border-radius: 20px;
+	
+	Width: 90%;
+	/*margin: auto;	*/
+	margin: 2% 2% 2% 2%;
+	width : 95%;
+	height: 100px;
+	color: white;
+	/*background-color: rgba(10,10,10,0.80);*/
+
+	max-height: 100%;	
+	max-width:100%;
+	background: url("../img/banniere.jpg") no-repeat top center;
+}
+
+nav {
+    text-align: right;
+    display: relative;
+	height:100%;
+	width:100%;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 35px;
+    margin-top: 7.5%; /*par rapport au haut de la page pourquoi ?*/
+	Width: 15%;
+	text-transform: uppercase;
+	font-size:20px;
+	
+	background-color: rgba(10,10,10,0.80);
+	border-radius : 10px;
+	
+}
+/*menu déroulant*/
+
+
+.menu a { 
+	display:block; 
+}
+
+.menu > li, .menu > li li {
+	position: relative;
+	display:inline-block;
+	width: 110px;
+	padding: 6px 15px;
+}
+
+.menu > li:hover, .menu > li li:hover { 
+  background: #29a329;
+  color: #FFF;
+  }
+
+
+.menu ul {
+	position: absolute;
+	padding: 0; /*tester le preference (avec/sans) (si "sans", enlever left et right : 0 (inutile)*/
+	left: 0;
+	right :0;
+	max-height:0em;	
+	margin: 0; 
+	overflow: hidden;
+	transition: 1s max-height 0.3s;
+	background-color: rgba(10,10,10,0.90);
+}
+
+.menu > li:hover ul {
+	max-height: 20em;
+}
+
+
+#accueil {margin-right:100px}
+
+
+/*Corp de page----------------------------------------------------------------------------------------------*/
+
+
+.corp {
+	Width: 99%;
+	margin: auto;
+	
+} 
+
+section {
+	margin: auto;	
+	width: 99%;
+}
+
+/*.section {
+  display: flex;
+  flex-wrap: wrap;
+}
+.section > div {
+  display: flex;
+}*/
+
+aside, article {
+	display: inline-block;
+	vertical-align: top;
+	text-align : center;
+    vertical-align: middle;
+}
+
+aside {
+	width : 25%;
+	margin-left: 2%;
+    vertical-align: middle;
+	
+	/*position: fixe; à tester !*/
+	
+	background-color: rgba(10,10,10,0.90);
+
+	border-width: 1px;
+	border-color: #29a329;
+	border-style:dotted;
+	
+	height: 350px;
+}
+
+.JC2 {
+	border-width: 0px;
+	background-color: rgba(10,10,10,0);
+}
+
+.JC2 img {width:100%}
+
+.part p {
+	text-align:center;
+	text-indent:0px;
+}
+
+.part article {width :95%}
+
+article {
+	width:65%;
+	margin: auto;	
+	padding-left: 3%;
+}
+
+.VoirArticle {
+	display: block;
+	margin-right: 10px;
+	text-align: right;
+	margin-bottom:20px;
+	height:50px;
+	font-size:20px;
+}
+
+.VoirArticle:hover {
+	color:orange;
+}
+
+.intersection {
+	border-bottom-color: #29a329;
+	border-bottom-width: 1px;
+	border-bottom-style:solid;
+}
+
+
+
+
+/* aside ---------------------------------------*/
+
+
+.vertical {
+  list-style: none;
+  padding: 4px; /* place autour des liens */
+  margin: 0; /* on annule les marges */
+}
+ 
+.choix,
+.choix a {
+  display: block;
+}
+ 
+.choix a {
+  margin: 1px ;
+  padding: 8px 20px; /* marges internes pour aérer */ 
+  color:  #29a329;
+  text-decoration: none; 
+
+  -webkit-transition: all .3s; /* Chrome/Safari */
+  -moz-transition: all .3s; /* Firefox vieux */
+  transition: all .3s; /* syntaxe officielle */
+}
+ 
+/* styles changeants au survol et focus */
+.choix a:hover,
+.choix a:focus {
+  background: #29a329;
+  color: #FFF;
+  padding-left: 30px; /* décalage du contenu de 10px vers la droite (30-20 = 10) */
+}
+
+
+
+
+
+/*Pied de page----------------------------------------------------------------------------------*/
+
+
+
+footer {
+	Width: 99%;
+	margin: auto;
+	height: 150px;
+	margin-bot: 20px;
+    vertical-align: middle;
+	text-align : center;
+}
+
+.partenaires, .reseaux, .contact {
+	background-color: rgba(10,10,10,0.90);
+
+	border-width: 1px;
+	border-color:  #29a329;
+	border-style:dotted;
+
+	color : white;
+    display: inline-block;
+    vertical-align: top;
+	width: 32.5%;
+	margin: auto;
+	height: 140px;
+	text-align : center;
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+.reseaux li, .contact li {
+	vertical-align: bottom; 
+    display: inline-block;
+	
+}
+
+
+
+
+
+
+
+
+
+/* LA GRANDE PARTIE DE TEST ! */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*neige*/
+/*
+.illustration {
+	position: relative;
+	margin: 0 auto;
+	width : 716px;
+	height: 413px;
+	background : url("./illustration.jpg") no-repeat top center;
+}
+ 
+.i-large,
+.i-medium,
+.i-small {
+	position : absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+}
+ 
+.i-large {
+	background: url("./particules_large.png") repeat 0px 0px;
+	-webkit-animation: dropFlowParticles 2s linear infinite;
+	     -o-animation: dropFlowParticles 2s linear infinite;
+	        animation: dropFlowParticles 2s linear infinite;
+}
+.i-medium {
+	background: url("./particules_medium.png") repeat 0px 0px;
+	-webkit-animation: dropFlowParticles 12s linear infinite;
+	     -o-animation: dropFlowParticles 12s linear infinite;
+	        animation: dropFlowParticles 12s linear infinite;
+}
+.i-small {
+	background:url("./particules_small.png") repeat 0px 0px;
+	-webkit-animation: dropFlowParticles 27s linear infinite;
+	     -o-animation: dropFlowParticles 27s linear infinite;
+	        animation: dropFlowParticles 27s linear infinite;
+}
+ 
+@-webkit-keyframes dropFlowParticles {
+	from { background-position: 0 0; }
+	to { background-position: 0 413px; }
+}
+@keyframes dropFlowParticles {
+	from { background-position: 0 0; }
+	to { background-position: 0 413px; }
+}
+*/
